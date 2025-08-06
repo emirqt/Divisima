@@ -1,0 +1,65 @@
+﻿@model IQueryable<Brand>
+
+<div class="container body">
+      <div class="main_container">
+        
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+
+            
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                                <h2>Marka Yönetimi</h2>
+                                <a asp-controller="Brand" asp-action="New" class="btn btn-success float-right">Yeni Marka</a>
+                                <div class="clearfix"></div>
+                        </div>
+                            
+                  <div class="x_content">
+                      <div class="row">
+                          <div class="col-sm-12">
+                            <div class="card-box table-responsive">
+                    <p class="text-muted font-13 m-b-30">
+                    </p>
+                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th>Marka Adı</th>
+                          <th>Görüntülenme Sırası</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+
+                          @foreach (Brand b in Model)
+                          {
+                              <tr>
+                                  <td>@b.Name</td>
+                                  <td>@b.DisplayIndex</td>
+                                  <td><a asp-controller="Brand" asp-action="Edit" asp-route-id="@b.ID" class="btn btn-warning">Düzenle</a></td>
+                                  <td><a asp-controller="Brand" asp-action="Delete" asp-route-id="@b.ID" class="btn btn-danger">Sil</a></td>
+                              </tr>
+                          }
+                          
+
+                    </table>
+                    
+                    
+                  </div>
+                  </div>
+              </div>
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        
+      </div>
+    </div>

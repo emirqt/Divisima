@@ -1,0 +1,52 @@
+﻿@model Brand
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Marka Düzenle</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <br />
+                        <form asp-controller="Brand" asp-action="Edit" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                            <input asp-for="@Model.ID" type="hidden" />
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" asp-for="@Model.Name">
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input asp-for="@Model.Name" class="form-control ">
+                                    <span asp-validation-for="@Model.Name"></span>
+                                </div>
+                            </div>
+
+                            <div class="item form-group">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" asp-for="@Model.DisplayIndex">
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <input asp-for="@Model.DisplayIndex" class="form-control ">
+                                    <span asp-validation-for="@Model.DisplayIndex"></span>
+                                </div>
+                            </div>
+
+
+                            <div class="ln_solid"></div>
+                            <div class="item form-group">
+                                <div class="col-md-6 col-sm-6 offset-md-3">
+                                    <button class="btn btn-primary" type="button">İptal</button>
+                                    <button class="btn btn-primary" type="reset">Yenile</button>
+                                    <button type="submit" class="btn btn-success">Ekle</button>
+                                </div>
+                            </div>
+                            @Html.AntiForgeryToken()
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page content -->
